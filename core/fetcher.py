@@ -1,16 +1,15 @@
-__author__ = 'cancobanoglu'
-
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from geoalchemy2 import WKTElement
-from shapely.geometry import asPoint, asPolygon, Polygon
-
+from shapely.geometry import asPoint, asPolygon
 
 import requests
 from api_urls import *
 from models import *
 
 from map_grid_creator import *
+
+__author__ = 'cancobanoglu'
 
 DB_SETTINGS = dict(
     db_name='poi',
@@ -39,6 +38,11 @@ Base.metadata.create_all(engine)
 
 # establish conversation between database
 _session = Session()
+
+
+# return _session
+def get_session():
+    return _session
 
 
 # '180', 'geo!41.078414,29.012468'
@@ -348,8 +352,8 @@ cat = {
     # 'hospital-health-care-facility',
 }
 
-for c in cat:
-    explore_all_places(c)
+# for c in cat:
+#     explore_all_places(c)
 
 # fetch_all_pt_stops()
 # create_input_for_multi_reverse_geocoding(PoiType.PLACES)

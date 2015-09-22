@@ -1,7 +1,6 @@
 __author__ = 'cancobanoglu'
 
 import random
-import operator
 import sys
 import unittest
 

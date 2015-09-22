@@ -1,7 +1,6 @@
 __author__ = 'cancobanoglu'
 
-from sqlalchemy import Column, DateTime, String, Integer, ForeignKey, func, Float
-from sqlalchemy.orm import relationship, backref
+from sqlalchemy import Column, String, Integer, Float
 from sqlalchemy.ext.declarative import declarative_base
 from geoalchemy2 import Geometry
 
